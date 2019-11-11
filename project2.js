@@ -9,7 +9,7 @@
     map.enableScrollWheelZoom(true);
     var localSearch = new BMap.LocalSearch(map);
     var weather = null;
-    listen();
+    listen();//调用监听
 
 function listen(){
     var ac = new BMap.Autocomplete(
@@ -40,7 +40,7 @@ function getweather(marker,poi,cityname) {
     $.ajax({
         type: 'GET',
         url: 'https://www.tianqiapi.com/api/',
-        data: 'version=v1&region=广州&city='+cityname+'&appid=[49741197]&appsecret=[3c1FjRGf]',
+        data: 'version=v1&city='+cityname+'&appid=[49741197]&appsecret=[3c1FjRGf]',
         dataType: 'JSON',
         error: function () {
             alert('网络错误');
